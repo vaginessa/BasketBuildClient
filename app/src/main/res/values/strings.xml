@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">halogenOS OTA</string>
+    <string name="dialog_content" formatted="false">File : %s \n\n Size : %s \n\n Upload Date : %s</string>
+</resources>
