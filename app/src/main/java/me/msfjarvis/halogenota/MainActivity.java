@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.afollestad.bridge.Bridge;
 import com.afollestad.bridge.BridgeException;
+import com.crashlytics.android.Crashlytics;
 import com.baoyz.widget.PullRefreshLayout;
 
 import org.json.JSONArray;
@@ -27,6 +28,8 @@ import me.msfjarvis.halogenota.adapters.BBAdapter;
 import me.msfjarvis.halogenota.data.BasketBuildFile;
 import me.msfjarvis.halogenota.utils.Constants;
 
+import io.fabric.sdk.android.Fabric;
+
 public class MainActivity extends Activity {
 
     private PullRefreshLayout pullRefreshLayout;
@@ -42,7 +45,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Fabric.with(context, new Crashlytics());
         sdf = new SimpleDateFormat("yyyy/MM/dd \nHH:mm", Locale.getDefault());
         sdf.setTimeZone(TimeZone.getDefault());
         pullRefreshLayout = (PullRefreshLayout) findViewById(R.id.swipeRefreshLayout);
